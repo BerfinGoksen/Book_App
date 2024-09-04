@@ -1,8 +1,5 @@
 import 'package:books_app/book/Splash.dart';
-import 'package:books_app/book/home.dart';
 import 'package:flutter/material.dart';
-
-import 'book/details.dart';
 
 void main() => runApp(const MyApp());
 
