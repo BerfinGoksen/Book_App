@@ -35,13 +35,7 @@ class _HomeState extends State<Home> {
                 const Padding(
                   padding: EdgeInsets.all(16.0),
                   child: Column(
-                    children: [
-                      BookOfTheWeek(),
-                      SizedBox(height: 20),
-                      RecommendedForYou(),
-                      SizedBox(height: 20),
-                      PopulerBooks(),
-                    ],
+                    children: [],
                   ),
                 ),
               ],
