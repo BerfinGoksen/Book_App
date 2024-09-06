@@ -1,3 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
+part 'book_for_you_model.g.dart';
+
+@JsonSerializable()
 class BookForYou {
   String? bookId;
   String? position;
@@ -7,24 +11,12 @@ class BookForYou {
   String? url;
 
   BookForYou({this.bookId, this.position, this.name, this.cover, this.rating, this.url});
-
-  BookForYou.fromJson(Map<String, dynamic> json) {
-    bookId = json['book_id'];
-    position = json['position'];
-    name = json['name'];
-    cover = json['cover'];
-    rating = json['rating'];
-    url = json['url'];
+//factory yeni bir nesne oluşturmak zorunda değildir var olan bir nesneyi de döndürebilir yeni bir nesne de oluşturabilir
+  factory BookForYou.fromJson(Map<String, dynamic> json) {
+    return _$BookForYouFromJson(json);
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['book_id'] = bookId;
-    data['position'] = position;
-    data['name'] = name;
-    data['cover'] = cover;
-    data['rating'] = rating;
-    data['url'] = url;
-    return data;
+    return _$BookForYouToJson(this);
   }
 }

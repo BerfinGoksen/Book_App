@@ -1,3 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
+part 'book_model.g.dart';
+
+@JsonSerializable()
 class BookModel {
   String? bookId;
   String? position;
@@ -8,23 +12,11 @@ class BookModel {
 
   BookModel({this.bookId, this.position, this.name, this.cover, this.rating, this.url});
 
-  BookModel.fromJson(Map<String, dynamic> json) {
-    bookId = json['book_id'];
-    position = json['position'];
-    name = json['name'];
-    cover = json['cover'];
-    rating = json['rating'];
-    url = json['url'];
+  factory BookModel.fromJson(Map<String, dynamic> json) {
+    return _$BookModelFromJson(json);
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['book_id'] = bookId;
-    data['position'] = position;
-    data['name'] = name;
-    data['cover'] = cover;
-    data['rating'] = rating;
-    data['url'] = url;
-    return data;
+    return _$BookModelToJson(this);
   }
 }
