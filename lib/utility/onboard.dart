@@ -1,7 +1,5 @@
 import 'package:books_app/utility/u_font.dart';
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../book/home.dart';
 
 class OnboardingWidget extends StatelessWidget {
   const OnboardingWidget({

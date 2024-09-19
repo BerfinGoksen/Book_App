@@ -9,7 +9,7 @@ abstract class IBookModelService {
   Future<List<BookForYou>?> fetchForYou();
 }
 
-class BookModelService implements IBookModelService {
+class BookModelService extends IBookModelService {
   @override
   Future<List<BookModel>?> fetchItemToService() async {
     final response = await Dio().get('http://192.168.1.34:8000/api/products');
@@ -45,4 +45,16 @@ class BookModelService implements IBookModelService {
     }
     return null;
   }
+}
+
+class ProjectDio {
+  final bookModel = Dio(
+    BaseOptions(baseUrl: 'http://192.168.1.34:8000/api/products'),
+  );
+  final populerBook = Dio(
+    BaseOptions(baseUrl: 'http://192.168.1.34:8000/api/product_star'),
+  );
+  final bookForYou = Dio(
+    BaseOptions(baseUrl: 'http://192.168.1.34:8000/api/product_for_you'),
+  );
 }

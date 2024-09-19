@@ -1,12 +1,10 @@
 import 'package:books_app/utility/u_color.dart';
 import 'package:books_app/utility/u_font.dart';
 import 'package:flutter/material.dart';
-
 import 'onboarding_screen.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
-
   @override
   State<Splash> createState() => _SplashState();
 }
